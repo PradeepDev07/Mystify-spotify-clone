@@ -1,0 +1,182 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+}
+
+.mainBody {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  background: linear-gradient(to bottom, #202020, #121212);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dummySearch {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 360px;
+  color: #000;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  padding: 4px 10px 4px 4px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.profileName {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.sectionTitle {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #181818;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+    background-color: #282828;
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px; /* Default radius */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.cardText {
+  width: 100%;
+}
+
+.cardTitle {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardArtist {
+  color: #b3b3b3;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Added Styles for Hover Play Button */
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.playButtonOverlay {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateY(8px);
+    border-radius: 50%;
+    box-shadow: 0 8px 8px rgba(0,0,0,0.3);
+    background-color: black; /* Makes the play button pop */
+    display: flex; /* Centers the icon if needed, though icon is svg */
+    border-radius: 50%;
+}
+
+.playIcon {
+    display: block; /* Removes extra spacing */
+}
+
+.card:hover .playButtonOverlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.playButtonOverlay:hover {
+    transform: scale(1.05) translateY(0);
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardText {
+  width: 100%;
+  text-align: left;
+}
+
+.cardTitle {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardArtist {
+  color: #b3b3b3;
+  font-size: 14px;
+}
