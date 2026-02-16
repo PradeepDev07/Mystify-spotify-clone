@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaPlayCircle } from 'react-icons/fa';
 import styles from './Dashboard.module.css';
+import { API_BASE_URL } from '../config/api';
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -13,13 +14,13 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const playlistsRes = await axios.get('http://localhost:3001/api/playlists');
+                const playlistsRes = await axios.get(`${API_BASE_URL}/api/playlists`);
                 setPlaylists(playlistsRes.data);
                 
-                const albumsRes = await axios.get('http://localhost:3001/api/albums');
+                const albumsRes = await axios.get(`${API_BASE_URL}/api/albums`);
                 setAlbums(albumsRes.data);
 
-                const artistsRes = await axios.get('http://localhost:3001/api/artists');
+                const artistsRes = await axios.get(`${API_BASE_URL}/api/artists`);
                 setArtists(artistsRes.data);
             } catch (error) {
                 console.error("Error fetching data", error);

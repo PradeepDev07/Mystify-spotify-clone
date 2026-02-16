@@ -4,6 +4,7 @@ import axios from 'axios';
 import { FaPlayCircle, FaArrowLeft, FaMusic } from 'react-icons/fa';
 import styles from './Dashboard.module.css';
 import { usePlayer } from '../context/PlayerContext';
+import { API_BASE_URL } from '../config/api';
 
 const CollectionPage = ({ type }) => {
     const { id } = useParams();
@@ -22,7 +23,7 @@ const CollectionPage = ({ type }) => {
                                : null;
                 
                 if (endpoint) {
-                    const res = await axios.get(`http://localhost:3001${endpoint}`);
+                    const res = await axios.get(`${API_BASE_URL}${endpoint}`);
                     setData(res.data);
                 }
             } catch (err) {

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaSpotify } from 'react-icons/fa';
 import styles from './Login.module.css';
+import { API_BASE_URL } from '../config/api';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -13,7 +14,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/api/login', {
+      const response = await axios.post(`${API_BASE_URL}/api/login`, {
         username,
         password,
       });

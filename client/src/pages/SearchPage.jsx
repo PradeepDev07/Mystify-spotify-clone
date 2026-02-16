@@ -5,6 +5,7 @@ import { FaPlayCircle } from 'react-icons/fa';
 import { useSearch } from '../context/SearchContext';
 import { usePlayer } from '../context/PlayerContext';
 import styles from './Dashboard.module.css';
+import { API_BASE_URL } from '../config/api';
 
 const SearchPage = () => {
     const { query } = useParams();
@@ -28,7 +29,7 @@ const SearchPage = () => {
              if (!query) {
                  setResults([]);
                  try {
-                     const res = await axios.get('http://localhost:3001/api/playlists');
+                     const res = await axios.get(`${API_BASE_URL}/api/playlists`);
                      setPlaylists(res.data);
                  } catch (e) {
                      console.error("Error fetching playlists", e);
@@ -37,7 +38,7 @@ const SearchPage = () => {
              }
              
              try {
-                 const res = await axios.get(`http://localhost:3001/api/songs?search=${query}`);
+                 const res = await axios.get(`${API_BASE_URL}/api/songs?search=${query}`);
                  setResults(res.data);
              } catch (e) {
                  console.error(e);
